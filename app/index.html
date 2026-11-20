@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Guide — GTA VI: all 55 trophies, cited, tracked</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-title">
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; offline guide &amp; tracker</p>
+    <h1>Leonida Trophy Guide</h1>
+    <p class="sub">All 55 trophies — 1 platinum, 2 gold, 6 silver, 46 bronze — each with its official name, description and grade, a guide in our own words, and the published sources behind every claim.</p>
+  </div>
+  <div class="progress-card" id="progressCard">
+    <p class="big"><span id="earnedCount">0</span><span class="of"> / 55 earned</span></p>
+    <div class="bar"><div class="bar-fill" id="barFill"></div></div>
+    <p class="grades" id="gradeCounts"></p>
+    <p class="platinum-line" id="platinumLine">Platinum: Vice Got a Price! — earn the other 54.</p>
+  </div>
+</header>
+
+<section class="cite-banner" id="citeBanner" aria-label="Citation counts">
+  <div class="cite-cell"><span class="cite-num" id="citeClaims">0</span><span class="cite-label">cited claims</span></div>
+  <div class="cite-cell"><span class="cite-num" id="citeBacked">0</span><span class="cite-label">backed by 2+ sources</span></div>
+  <div class="cite-cell"><span class="cite-num" id="citeSources">0</span><span class="cite-label">sources cited</span></div>
+  <div class="cite-cell"><span class="cite-num" id="citeDisagree">0</span><span class="cite-label">disagreements shown</span></div>
+  <p class="cite-note">Every guide step names its sources. Where the guides disagree, the disagreement is shown — nothing is presented as settled when the sources are not settled.</p>
+</section>
+
+<nav class="tabs" id="tabs" aria-label="Views">
+  <button type="button" data-view="tracker" class="active">Tracker</button>
+  <button type="button" data-view="roadmap">Roadmap to Platinum</button>
+  <button type="button" data-view="missables">Missables</button>
+  <button type="button" data-view="sources">Sources &amp; Disagreements</button>
+</nav>
+
+<section class="toolbar" id="toolbar">
+  <label class="search">Search <input id="search" type="search" placeholder="Trophy, mission, place…" autocomplete="off"></label>
+  <label>Grade <select id="grade">
+    <option value="all">All grades</option>
+    <option value="platinum">Platinum</option>
+    <option value="gold">Gold</option>
+    <option value="silver">Silver</option>
+    <option value="bronze">Bronze</option>
+  </select></label>
+  <label>Kind <select id="kind">
+    <option value="all">All kinds</option>
+    <option value="story">Story</option>
+    <option value="missable">Missable</option>
+    <option value="collectible">Collectibles</option>
+    <option value="activity">Activities</option>
+    <option value="side">Side quests</option>
+    <option value="stranger">Strangers &amp; Freaks</option>
+    <option value="robbery">Robberies</option>
+    <option value="combat">Combat</option>
+    <option value="exploration">Exploration</option>
+    <option value="money">Money</option>
+    <option value="completion">Completion</option>
+    <option value="misc">Misc feats</option>
+  </select></label>
+  <label>Show <select id="earnedFilter">
+    <option value="all">All trophies</option>
+    <option value="remaining">Not yet earned</option>
+    <option value="earned">Earned</option>
+  </select></label>
+  <label class="check"><input id="spoiler" type="checkbox"> Spoiler-free: hide story trophies until earned</label>
+  <span class="spacer"></span>
+  <button id="export" type="button">Export progress</button>
+  <label class="import">Import progress <input id="import" type="file" accept="application/json,.json"></label>
+  <button id="reset" type="button">Reset</button>
+</section>
+<p class="filter-line" id="filterLine"></p>
+
+<main>
+  <section id="view-tracker" class="view">
+    <div id="trophyList"></div>
+  </section>
+
+  <section id="view-roadmap" class="view" hidden>
+    <h2>Six stages to the platinum</h2>
+    <p class="view-intro">Built from the official descriptions: which story chapters and missions, which collectibles and counts, in what order. Time estimates come from the cited guides — PowerPyx puts the platinum at about 200 hours, Push Square at 300 or more.</p>
+    <div id="roadmapList"></div>
+  </section>
+
+  <section id="view-missables" class="view" hidden>
+    <h2>Missables — one to watch, the rest are safe</h2>
+    <p class="view-intro">Three published guides agree: only one trophy might be missable. Every other trophy stays earnable in free-roam after the story, and every trophy-related quest-giver comes back.</p>
+    <div id="missableWatch"></div>
+    <h3>Chapter missable grid</h3>
+    <p class="view-intro">Which trophies must be done by which chapter. One cell in the whole grid is a risk.</p>
+    <div id="missableGrid"></div>
+    <h3>Save discipline</h3>
+    <ul class="save-list">
+      <li>There is no mission replay. Keep a manual save at the start and end of every chapter (10 saves) and rotate the other 5 slots for free-roam cleanup — PowerPyx.</li>
+      <li>Cheats disable trophies and saving, and cheats only unlock after the story — keep them off the platinum save. PowerPyx, GTA Spotter.</li>
+      <li>Optional missions with an hourglass icon expire, but none of them is needed for a trophy — PowerPyx.</li>
+      <li>Some quest-givers go quiet for a while mid-story (Kenton after Chapter 1, for example). All trophy-related characters come back — PowerPyx.</li>
+    </ul>
+  </section>
+
+  <section id="view-sources" class="view" hidden>
+    <h2>Sources &amp; disagreements</h2>
+    <p class="view-intro">The official list comes from Exophase and PSNProfiles, which agree on every name, description and grade. The methods come from the published guides below. A step that cites two or more of them is backed by two or more guides.</p>
+    <h3>Source matrix — what each source backs</h3>
+    <div id="sourceMatrix"></div>
+    <h3>Where the sources disagree</h3>
+    <div id="disagreeList"></div>
+    <h3>How this guide was built</h3>
+    <ul class="save-list">
+      <li>Official names, descriptions and grades are shown exactly as PlayStation publishes them. Five trophies have no confirmed method in any published guide yet — those say so plainly instead of guessing.</li>
+      <li>Earn rates beside each trophy come from Exophase, as of 20 Nov 2026, and cover its tracked players only.</li>
+      <li>Counts in the banner are computed live from the guide data: one cited claim per guide step, and a claim counts as backed by 2+ sources when its step names two or more guides.</li>
+      <li>Guide text is written in our own words for this guide. No Rockstar logo, artwork or game screenshot is used anywhere.</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Leonida Trophy Guide — an offline, open guide for Grand Theft Auto VI on PlayStation 5. Works with the network off; progress is saved in your browser only. Sources are named beside every claim; see the Sources view for the full matrix and every disagreement.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
